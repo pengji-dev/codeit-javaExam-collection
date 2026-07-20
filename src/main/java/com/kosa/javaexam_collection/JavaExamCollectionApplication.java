@@ -3,9 +3,7 @@ package com.kosa.javaexam_collection;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 //@SpringBootApplication
 public class JavaExamCollectionApplication {
@@ -75,6 +73,42 @@ public class JavaExamCollectionApplication {
 
         System.out.println(string_list);
         System.out.println(integer_list);
+
+        /*
+            Collection
+            3) Set 세트
+                - 들어있는 값들이 모두 고유한(유니크) 리스트 = 중복값이 존재하지 않는다.
+                - List에서 Element 요소의 중복을 자체적으로 방지해주는 자료구조
+                - 구현체 종류 : HashSet / TreeSet : 자동 정렬
+        */
+//        Set<String> string_set = new HashSet<>();               // 빈 Set 선언 (String 요소)
+//        string_set.add("1");
+//        string_set.add("2");
+//        string_set.add("3");
+
+        Set<String> string_set = new HashSet<>(Arrays.asList("1", "2", "3"));
+        string_set.add("4");
+        string_set.remove("1");
+        string_set.contains("1");
+        string_set.clear();
+        string_set.isEmpty();
+        string_set.size();
+
+//        Set<Integer> integer_set = new HashSet<>();               // 빈 Set 선언 (String 요소)
+//        integer_set.add(1);
+//        integer_set.add(2);
+//        integer_set.add(3);
+
+        Set<Integer> integer_set = new HashSet<>(Arrays.asList(1, 2, 3));
+        integer_set.add(4);
+        integer_set.remove(1);
+        integer_set.contains(1);
+        integer_set.clear();
+        integer_set.isEmpty();
+        integer_set.size();
+
+        System.out.println(string_set);
+        System.out.println(integer_set);
     }
 
 }
