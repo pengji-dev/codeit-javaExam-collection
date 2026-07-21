@@ -109,6 +109,60 @@ public class JavaExamCollectionApplication {
 
         System.out.println(string_set);
         System.out.println(integer_set);
+
+        /*
+            Collection
+            4) Map 맵
+                - Key - Value 기반 자료구조 = 데이터베이스와 되게 유사 = Primary Key - Row(Data)
+                - List 다음으로 많이 사용하는 자료구조
+                - 시간 복잡도를 낮추기 위해 공간 복잡도를 Map으로 늘려 활용한다.
+                - Entry : entrySet()
+                - Key : keySet(), containKey()
+                - Value : values(), containsValue()
+                - 구현체 종류 : HashMap / TreeMap : 자동 정렬 / LinkedHashMap : 키 순서 보장
+        */
+        Map<Integer, String> string_map = new HashMap<>();            // 빈 Map 선언 (String 요소)
+        string_map.put(1, "1");
+        string_map.put(2, "2");
+        string_map.put(3, "3");
+
+        /* 주의 : Arrays.asList와 Map.of로 생성되는 Collection은 Immutable 불변성이기에 수정 불가 - get(), put(), remove() 등 불가 */
+//        Map<Integer, String> string_map = Map.of(1, "1", 2, "2", 3, "3");
+        string_map.get(2);                          // 조회
+        string_map.put(4, "4");                     // 추가
+        string_map.replace(4, "5");                 // 수정
+        string_map.remove(3);                  // 삭제
+        string_map.containsKey(1);                  // 포함
+        string_map.containsValue("1");              // 포함
+        string_map.entrySet();                      // - Entry = [Key, Value] (Set)
+        string_map.keySet();                        // - Key (Set)
+        string_map.values();                        // - Value (List)
+        string_map.clear();                         // 리셋
+        string_map.isEmpty();                       // 검사
+        string_map.size();                          // 개수
+
+        Map<Integer, Integer> integer_map = new HashMap<>();          // 빈 Map 선언 (Integer 요소)
+        integer_map.put(1, 1);
+        integer_map.put(2, 2);
+        integer_map.put(3, 3);
+
+        /* 주의 : Arrays.asList와 Map.of로 생성되는 Collection은 Immutable 불변성이기에 수정 불가 - get(), put(), remove() 등 불가 */
+//        Map<Integer, Integer> integer_map = Map.of(1, 1, 2, 2, 3, 3);
+        integer_map.get(2);                          // 조회
+        integer_map.put(4, 4);                       // 추가
+        integer_map.replace(4, 5);                   // 수정
+        integer_map.remove(3);                  // 삭제
+        integer_map.containsKey(1);                  // 포함
+        integer_map.containsValue("1");              // 포함
+        integer_map.entrySet();                      // - Entry = [Key, Value] (Set)
+        integer_map.keySet();                        // - Key (Set)
+        integer_map.values();                        // - Value (List)
+        integer_map.clear();                         // 리셋
+        integer_map.isEmpty();                       // 검사
+        integer_map.size();                          // 개수
+
+        System.out.println(string_map);
+        System.out.println(integer_map);
     }
 
 }
